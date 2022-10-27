@@ -37,6 +37,56 @@ func resourceProject() *schema.Resource {
 				Optional:    true,
 				Description: "The ID of the parent project.",
 			},
+			"wbs_france": {
+				Type:        schema.TypeString,
+				Optional:    true,
+				Description: "The WBS of this project",
+			},
+			"wbs_vietnam": {
+				Type:        schema.TypeString,
+				Optional:    true,
+				Description: "The WBS of this project",
+			},
+			"wbs_singapour": {
+				Type:        schema.TypeString,
+				Optional:    true,
+				Description: "The WBS of this project",
+			},
+			"wbs_maurice": {
+				Type:        schema.TypeString,
+				Optional:    true,
+				Description: "The WBS of this project",
+			},
+			"wbs_luxembourg": {
+				Type:        schema.TypeString,
+				Optional:    true,
+				Description: "The WBS of this project",
+			},
+			"wbs_hong_kong": {
+				Type:        schema.TypeString,
+				Optional:    true,
+				Description: "The WBS of this project",
+			},
+			"wbs_chine": {
+				Type:        schema.TypeString,
+				Optional:    true,
+				Description: "The WBS of this project",
+			},
+			"wbs_canada": {
+				Type:        schema.TypeString,
+				Optional:    true,
+				Description: "The WBS of this project",
+			},
+			"wbs_belgique": {
+				Type:        schema.TypeString,
+				Optional:    true,
+				Description: "The WBS of this project",
+			},
+			"contract_number": {
+				Type:        schema.TypeString,
+				Required:    true,
+				Description: "Contract number",
+			},
 		},
 		Importer: &schema.ResourceImporter{
 			StateContext: schema.ImportStatePassthroughContext,
@@ -48,12 +98,22 @@ func resourceProjectCreate(ctx context.Context, d *schema.ResourceData, m interf
 	client := m.(*goidefix.Idefix)
 
 	project, err := client.Project.Create(ctx, &project.CreateRequest{
-		Name:          d.Get("name").(string),
-		CompanyID:     d.Get("company_id").(int),
-		ParentID:      d.Get("parent_id").(int),
-		TypeName:      "Suivi",
-		InvoiceType:   "FDT",
-		InitialBudget: "0",
+		Name:           d.Get("name").(string),
+		CompanyID:      d.Get("company_id").(int),
+		ParentID:       d.Get("parent_id").(int),
+		WbsFrance:      d.Get("wbs_france").(string),
+		WbsVietnam:     d.Get("wbs_vietnam").(string),
+		WbsSingapour:   d.Get("wbs_singapour").(string),
+		WbsMaurice:     d.Get("wbs_maurice").(string),
+		WbsLuxembourg:  d.Get("wbs_luxembourg").(string),
+		WbsHongKong:    d.Get("wbs_hong_kong").(string),
+		WbsChine:       d.Get("wbs_chine").(string),
+		WbsCanada:      d.Get("wbs_canada").(string),
+		WbsBelgique:    d.Get("wbs_belgique").(string),
+		ContractNumber: d.Get("contract_number").(string),
+		TypeName:       "Suivi",
+		InvoiceType:    "FDT",
+		InitialBudget:  "0",
 	})
 	if err != nil {
 		return diag.FromErr(err)
@@ -94,13 +154,23 @@ func resourceProjectUpdate(ctx context.Context, d *schema.ResourceData, m interf
 	client := m.(*goidefix.Idefix)
 
 	_, err := client.Project.Update(ctx, &project.UpdateRequest{
-		ID:            d.Id(),
-		Name:          d.Get("name").(string),
-		CompanyID:     d.Get("company_id").(int),
-		ParentID:      d.Get("parent_id").(int),
-		TypeName:      "Suivi",
-		InvoiceType:   "FDT",
-		InitialBudget: "0",
+		ID:             d.Id(),
+		Name:           d.Get("name").(string),
+		CompanyID:      d.Get("company_id").(int),
+		ParentID:       d.Get("parent_id").(int),
+		WbsFrance:      d.Get("wbs_france").(string),
+		WbsVietnam:     d.Get("wbs_vietnam").(string),
+		WbsSingapour:   d.Get("wbs_singapour").(string),
+		WbsMaurice:     d.Get("wbs_maurice").(string),
+		WbsLuxembourg:  d.Get("wbs_luxembourg").(string),
+		WbsHongKong:    d.Get("wbs_hong_kong").(string),
+		WbsChine:       d.Get("wbs_chine").(string),
+		WbsCanada:      d.Get("wbs_canada").(string),
+		WbsBelgique:    d.Get("wbs_belgique").(string),
+		ContractNumber: d.Get("contract_number").(string),
+		TypeName:       "Suivi",
+		InvoiceType:    "FDT",
+		InitialBudget:  "0",
 	})
 	if err != nil {
 		return diag.FromErr(err)
