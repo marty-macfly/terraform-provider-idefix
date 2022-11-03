@@ -23,19 +23,19 @@ data "idefix_projects" "example" {
 
 ### Required
 
-- **name_filter** (String) Name to filter the list of projects.
+- `name_filter` (String) Name to filter the list of projects.
 
 ### Read-Only
 
-- **id** (String) The ID of this resource.
-- **projects** (List of Object) The projects list. (see [below for nested schema](#nestedatt--projects))
+- `id` (String) The ID of this resource.
+- `projects` (List of Object) The projects list. (see [below for nested schema](#nestedatt--projects))
 
 <a id="nestedatt--projects"></a>
 ### Nested Schema for `projects`
 
 Read-Only:
 
-- **id** (Number)
-- **name** (String)
+- `id` (Number)
+- `name` (String)
 
 

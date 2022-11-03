@@ -23,18 +23,18 @@ data "idefix_ci" "example" {
 
 ### Required
 
-- **id** (String) The ID of this resource.
+- `id` (String) The ID of this resource.
 
 ### Read-Only
 
-- **comment** (String) Comment.
-- **company_id** (Number) The company ID associated to the CI.
-- **is_owner_lbn** (Boolean) The owner of the CI.
-- **name** (String) The name of this CI.
-- **outsourcing_name** (String) The Outsourcing level name.
-- **project_ids** (List of Number) The projects associated to the CI.
-- **service_level_id** (Number) The Level of the service.
-- **team** (String) The team in charge.
-- **type_id** (Number) The type of the CI.
+- `comment` (String) Comment.
+- `company_id` (Number) The company ID associated to the CI.
+- `is_owner_lbn` (Boolean) The owner of the CI.
+- `name` (String) The name of this CI.
+- `outsourcing_name` (String) The Outsourcing level name.
+- `project_ids` (List of Number) The projects associated to the CI.
+- `service_level_id` (Number) The Level of the service.
+- `team` (String) The team in charge.
+- `type_id` (Number) The type of the CI.
 
 

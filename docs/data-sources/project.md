@@ -23,12 +23,12 @@ data "idefix_project" "example" {
 
 ### Required
 
-- **id** (Number) The ID of this resource.
+- `id` (Number) The ID of this resource.
 
 ### Read-Only
 
-- **company_id** (Number) The company ID.
-- **name** (String) The name of the project.
-- **parent_id** (Number) The ID of the parent project.
+- `company_id` (Number) The company ID.
+- `name` (String) The name of the project.
+- `parent_id` (Number) The ID of the parent project.
 
 
